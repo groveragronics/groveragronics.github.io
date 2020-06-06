@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!--  height:260px en concept -->
+    <style>
+
+            .img-container {
+            text-align: center;
+            }
+            .green-grover {
+            background-color: #72863f;
+            }
+            img {
+            vertical-align: middle;
+            }
+            .carousel .carousel-item {
+            width:400px; height:360px!important;
+            }
+            .wrapper {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 */
+                padding-top: 25px;
+                height: 0;
+            }
+            .wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+                        * {box-sizing:border-box}
+
+            /* Slideshow container */
+            .slideshow-container {
+              max-width: 1000px;
+              position: relative;
+              margin: auto;
+            }
+
+            /* Hide the images by default */
+            .mySlides {
+              display: none;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              width: auto;
+              margin-top: -22px;
+              padding: 16px;
+              color: white;
+              font-weight: bold;
+              font-size: 18px;
+              transition: 0.6s ease;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+              background-color: rgba(0,0,0,0.8);
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+              color: #f2f2f2;
+              font-size: 12px;
+              padding: 8px 12px;
+              position: absolute;
+              top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+              cursor: pointer;
+              height: 15px;
+              width: 15px;
+              margin: 0 2px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+              background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+              -webkit-animation-name: fade;
+              -webkit-animation-duration: 1.5s;
+              animation-name: fade;
+              animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+              from {opacity: .4}
+              to {opacity: 1}
+            }
+
+            @keyframes fade {
+              from {opacity: .4}
+              to {opacity: 1}
+            }
+            * {
+              box-sizing: border-box;
+            }
+
+              .container {
+              position: relative;
+              max-width: 800px;
+              margin: 0 auto;
+            }
+
+            .container img {vertical-align: middle;}
+
+            .container .content {
+              position: absolute;
+              bottom: 0;
+              background: rgb(0, 0, 0); /* Fallback color */
+              background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+              color: #f1f1f1;
+              width: 100%;
+              padding: 10px;
+            }
+            body, html {
+              height: 100%;
+              margin: 0;
+             }
+
+            .hero-image {
+              background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("static/images/Team/Conocenos.jpg");
+              height: 70%;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+            }
+
+            .hero-text {
+              text-align: center;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: white;
+            }
+
+            .bgimg-1, .bgimg-2, .bgimg-3 {
+              position: relative;
+
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+
+            }
+            .bgimg-1 {
+              background-image: url("static/images/Index/problematica.jpg");
+              min-height: 100%;
+
+            }
+            .bgimg-2 {
+              background-image: url("static/images/Index/solución.jpg");
+              min-height: 100%;
+            }
+            .caption {
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 100%;
+              text-align: center;
+              color: #000;
+            }
+
+            .caption span.border {
+              background-color: #000;
+              color: #fff;
+              padding: 18px;
+              font-size: 25px;
+              letter-spacing: 10px;
+    </style>
+
+
+</head>
+<body>
+
+<!--Navigation Bar-->
+ <div class="navbar-fixed">
+    <nav class="green-grover">
+      <div class="nav-wrapper container">
+        <a href="index.html" class="brand-logo" > <img class="responsive-img"
+        width="175px"  height="45px" id="logo"
+        src="static/images/GroverWhite.png"/></a>
+        <a href="#" data-target="menu-responsive" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="UMA.html">UMA</a></li>
+            <li><a href="livestream.html">Transmisión</a></li>
+            <li><a href="social_impact.html">Impacto Social</a></li>
+            <li><a href="about_us.html">Acerca de</a></li>
+
+          <li>
+            <a href="#" class="dropdown-trigger" data-target="id_drop">
+              Documentación
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+              <ul class="dropdown-content" id="id_drop">
+                 <li><a class="black-text" href="sim.html">Simulación</a></li>
+                  <li class="divider"></li>
+                 <li><a class="black-text" href="concept.html">Pruebas de concepto</a></li>
+                  <li class="divider"></li>
+                  <li class="divider"></li>
+              </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+ </div>
+    <ul class="sidenav" id="menu-responsive">
+            <li><a href="UMA.html">UMA</a></li>
+            <li><a href="livestream.html">Transmisión</a></li>
+            <li><a href="social_impact.html">Impacto Social</a></li>
+            <li><a href="about_us.html">Acerca de</a></li>
+            <li><a href="sim.html"> &nbsp;•Simulación</a></li>
+            <li><a href="concept.html">&nbsp;•Pruebas de concepto</a></li>
+
+     </ul>
+
+
+<!--Main page-->
+    <div class="hero-image">
+      <div class="hero-text">
+          <h1 style="font-size:60px"><strong>Conócenos<br></strong></h1>
+          <p><strong>Smart Industries</strong></p>
+      </div>
+    </div>
+<br>
+      <div style="color: #000;background-color:white;
+        text-align:center;padding:5px 80px;text-align: justify;">
+              <h4 style="text-align:center;">¿Quiénes somos?</h4>
+              <p style="font-size:20px; text-align:justify"> Grover es un departamento del
+                  equipo de Smart Industries conformado por estudiantes de robótica
+                  y mecatrónica del Tecnológico de Monterrey apasionados por la tecnología
+                  y con la mirada en el campo mexicano. Contamos con una amplia gama de
+                  habilidades para resolver los problemas desde distintos enfoques. </p>
+        <p>
+        </p>
+        <br><hr style="width:100%;text-align:center;"><br><br>
+        <div class="row ">
+        <!-- Sandra Tello -->
+          <div class="col s12 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Sandra_Tello.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Sandra Tello</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/sandra-tello-salinas/">
+                            <p style="text-align:left; margin-left:2.5em"  class="blue-linked-text">sandra-tello-salinas</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+        <!-- Carlos Silva -->
+          <div class="col s12 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Carlos_Silva.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Carlos Silva</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/carlos-silvap/">
+                            <p style="text-align:left; margin-left:3em" class="blue-linked-text">carlos-silvap</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+        <!-- Pablo Candelas -->
+           <div class="col s12 m4">
+              <div class="row valign-wrapper">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Candelas.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Pablo Candelas</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/pablo-daniel-candelas-pérez/">
+                            <p style="text-align:left; margin-left:3em" class="blue-linked-text">pablo-daniel-candelas-pérez</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="row ">
+        <!-- Carlos Salazar -->
+          <div class="col s12 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Carlos_Salazar.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Carlos Salazar</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/carlos-salazar-lopez/">
+                            <p style="text-align:left; margin-left:3em" class="blue-linked-text">carlos-salazar-lopez</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+        <!-- Isaac Planter -->
+          <div class="col s12 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Isaac_Planter.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Isaac Planter</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/isaac-planter-villalobos/">
+                            <p style="text-align:left; margin-left:3em" class="blue-linked-text">isaac-planter-villalobos</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+        <!-- Jorge Villicaña -->
+          <div class="col s12 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Jorge_Villicaña.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Jorge Villicaña</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/jorge-lino-villicaña-garcía/">
+                            <p style="text-align:left; margin-left:3em" class="blue-linked-text">jorge-lino-villicaña-garcía</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="row ">
+        <!-- Atocha Anaya -->
+          <div class="col s12 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Atocha.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Atocha Anaya</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/jesus-de-atocha-anaya-correa/">
+                            <p style="text-align:left; margin-left:3em" class="blue-linked-text">jesus-de-atocha-anaya-correa</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+        <!-- Esmeralda Mulás -->
+          <div class="col s12 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Esmeralda_Mulás.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Esmeralda Mulás</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/esmeralda-mulas/">
+                            <p style="text-align:left; margin-left:3em" class="blue-linked-text">esmeralda-mulas</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+        <!-- Fernando Alonso -->
+          <div class="col s12 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Fernando_Alonso.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Fernando Alonso</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/fernando-alonso-rivera/">
+                            <p style="text-align:left; margin-left:3em" class="blue-linked-text">fernando-alonso-rivera</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="row ">
+        <!-- Empty Space -->
+          <div class="col s0 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                </div>
+                <div class="col s8 m10">
+                  </span>
+                </div>
+              </div>
+          </div>
+
+        <!-- Gustavo Herrera -->
+          <div class="col s12 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                  <img src="static/images/Team/Gustavo_Herrera.jpg" alt="" class="circle responsive-img valign">
+                </div>
+                <div class="col s8 m10">
+                  <span class="black-text">
+                      <strong><h5>Gustavo Herrera</h5></strong>
+                       <img src="static/images/linked_in.png"
+                            align="left" width="35px" alt="" class="responsive-img">
+                        <a href="https://www.linkedin.com/in/HerreraRGustavo/">
+                            <p style="text-align:left; margin-left:3em" class="blue-linked-text">HerreraRGustavo</p>
+                        </a>
+                  </span>
+                </div>
+              </div>
+          </div>
+
+        <!-- Empty Space -->
+          <div class="col s0 m4 ">
+              <div class="row valign-wrapper ">
+                <div class="col s8 m5">
+                </div>
+                <div class="col s8 m10">
+                </div>
+              </div>
+          </div>
+    </div>
+
+    </div>
+
+
+<!--Footer-->
+  <footer class="page-footer green-grover">
+           <div class="container">
+            <div class="row">
+
+                <h6 class="white-text center">Contáctanos</h6>
+                <p class="grey-text text-lighten-4 center">groveragronics@gmail.com</p>
+
+            </div>
+          </div>
+     <div class="footer-copyright">
+         <div class="container">
+            © 2020 Smart Industries
+            <a class="grey-text text-lighten-4 right" href="#!">drone-x.com</a>
+            <a class="grey-text text-lighten-4 right" href="#!">sensum.com &nbsp</a>
+         </div>
+     </div>
+</footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+         M.AutoInit();
+  });
+    </script>
+</body>
+</html>

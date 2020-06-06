@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!--  height:260px en concept -->
+    <style>
+
+            .img-container {
+            text-align: center;
+            }
+            .green-grover {
+            background-color: #72863f;
+            }
+            img {
+            vertical-align: middle;
+            }
+            .carousel .carousel-item {
+            width:400px; height:360px!important;
+            }
+            .wrapper {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 */
+                padding-top: 25px;
+                height: 0;
+            }
+            .wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+                        * {box-sizing:border-box}
+
+            /* Slideshow container */
+            .slideshow-container {
+              max-width: 1000px;
+              position: relative;
+              margin: auto;
+            }
+
+            /* Hide the images by default */
+            .mySlides {
+              display: none;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              width: auto;
+              margin-top: -22px;
+              padding: 16px;
+              color: white;
+              font-weight: bold;
+              font-size: 18px;
+              transition: 0.6s ease;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+              background-color: rgba(0,0,0,0.8);
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+              color: #f2f2f2;
+              font-size: 12px;
+              padding: 8px 12px;
+              position: absolute;
+              top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+              cursor: pointer;
+              height: 15px;
+              width: 15px;
+              margin: 0 2px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+              background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+              -webkit-animation-name: fade;
+              -webkit-animation-duration: 1.5s;
+              animation-name: fade;
+              animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+              from {opacity: .4}
+              to {opacity: 1}
+            }
+
+            @keyframes fade {
+              from {opacity: .4}
+              to {opacity: 1}
+            }
+            * {
+              box-sizing: border-box;
+            }
+
+              .container {
+              position: relative;
+              max-width: 800px;
+              margin: 0 auto;
+            }
+
+            .container img {vertical-align: middle;}
+
+            .container .content {
+              position: absolute;
+              bottom: 0;
+              background: rgb(0, 0, 0); /* Fallback color */
+              background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+              color: #f1f1f1;
+              width: 100%;
+              padding: 10px;
+            }
+            body, html {
+              height: 100%;
+              margin: 0;
+             }
+
+            .hero-image {
+              background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("static/images/Index/header.jpg");
+              height: 65%;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+            }
+
+            .hero-text {
+              text-align: center;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: white;
+            }
+
+            .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+              position: relative;
+
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+
+            }
+            .bgimg-1 {
+              background-image: url("static/images/Index/problematica.jpg");
+              min-height: 100%;
+
+            }
+            .bgimg-2 {
+              background-image: url("static/images/Index/solución.jpg");
+              min-height: 100%;
+            }
+            .bgimg-3 {
+              background-image: url("static/images/impacto.jpg");
+              min-height: 400px;
+            }
+            .bgimg-4 {
+              background-image: url("static/images/impacto_1.jpg");
+              min-height: 500px;
+            }
+
+            .caption {
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 100%;
+              text-align: center;
+              color: #000;
+            }
+
+            .caption span.border {
+              background-color: #000;
+              color: #fff;
+              padding: 9px;
+              font-size: 25px;
+              letter-spacing: 10px;
+              }
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #72863f;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+    </style>
+</head>
+
+<body>
+
+<!--Navigation Bar-->
+ <div class="navbar-fixed">
+    <nav class="green-grover">
+      <div class="nav-wrapper container">
+        <a href="index.html" class="brand-logo" > <img class="responsive-img"
+        width="175px"  height="45px" id="logo"
+        src="static/images/GroverWhite.png"/></a>
+        <a href="#" data-target="menu-responsive" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="UMA.html">UMA</a></li>
+            <li><a href="livestream.html">Transmisión</a></li>
+            <li><a href="social_impact.html">Impacto Social</a></li>
+            <li><a href="about_us.html">Acerca de</a></li>
+
+          <li>
+            <a href="#" class="dropdown-trigger" data-target="id_drop">
+              Documentación
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+              <ul class="dropdown-content" id="id_drop">
+                 <li><a class="black-text" href="sim.html">Simulación</a></li>
+                  <li class="divider"></li>
+                 <li><a class="black-text" href="concept.html">Pruebas de concepto</a></li>
+                  <li class="divider"></li>
+                  <li class="divider"></li>
+              </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+ </div>
+    <ul class="sidenav" id="menu-responsive">
+            <li><a href="UMA.html">UMA</a></li>
+            <li><a href="livestream.html">Transmisión</a></li>
+            <li><a href="social_impact.html">Impacto Social</a></li>
+            <li><a href="about_us.html">Acerca de</a></li>
+            <li><a href="sim.html"> &nbsp;•Simulación</a></li>
+            <li><a href="concept.html">&nbsp;•Pruebas de concepto</a></li>
+
+     </ul>
+
+
+<!--Main page-->
+<main>
+<div class="bgimg-3">
+  <div class="caption">
+  <span class="border">IMPACTO SOCIAL</span>
+  </div>
+</div>
+
+<!-- Hambre cero, Igualdad, Trabajo y Salud -->
+<div style="color: #000;background-color:white;
+text-align:center;padding:5px 80px;text-align: justify;">
+
+
+
+
+ <p align="justify" style="font-size: 15pt; color: #000">
+        "Los Objetivos de Desarrollo Sostenible (ODS) se gestaron en
+        la Conferencia de las Naciones Unidas sobre el Desarrollo Sostenible,
+        celebrada en Río de Janeiro en 2012. El propósito era crear un conjunto
+        de objetivos mundiales relacionados con los desafíos ambientales, políticos
+        y económicos con que se enfrenta nuestro mundo.
+        <a target="_blank" href="https://www.undp.org/content/undp/es/home/sustainable-development-goals/background.html">(...)</a>" <br></p>
+ <p align="center" style="font-size: 20pt; color: #000">
+     <strong>En Grover, estamos comprometidos con la realidad del país y el mundo en el que vivimos</strong></p>
+
+    <br><br><hr style="width:80%;text-align:center;"><br><br>
+        <div class="row">
+            <div class="col s12 m3">
+
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                               <img src="static/images/Impacto/hambre_cero.png" alt="Avatar"
+                                    style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                          <h4>Hambre cero</h4>
+                            <div class="container">
+                                <p style="font-size: 10pt;" align="justify">
+                               - El número de personas con desnutrición alcanzó los 821 millones en 2017.<br>
+                         <br>  - El 26% de los trabajadores están empleados en agricultura.</p>
+                        <a target="_blank" href="https://www.undp.org/content/undp/es/home/sustainable-development-goals/goal-2-zero-hunger.html">
+                        <p style="color:blue" align="center">Ver Más</p></a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            <div class="col s12 m9" >
+                <div  class="container centerr" >
+                    <p align="center" style="font-size: 20pt; color: #000">
+                            <strong>Producción Óptima</strong></p>
+                    <p align="justify" style="font-size:18px">
+                        UMA apoya al agricultor aumentando la productividad
+                        agrícola de una manera digna e inteligente. Con esto
+                        se apoya  cumplir con la demanda de alimento y a su vez satisfacer
+                        las necesidades alimentarias requeridas en México y el mundo.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+<br><br><hr style="width:80%;text-align:center;"><br><br>
+
+        <div class="row">
+            <div class="col s12 m9">
+                <div  style="font-size:18px" class="container centerr">
+                    <p align="center" style="font-size: 20pt; color: #000">
+                            <strong>Calidad de vida</strong></p>
+                    Según el <a href="https://www.gob.mx/inapam">INAPAM</a>, el deterioro de la salud es una de las
+                        principales causas de la transmisión intergeneracional de la pobreza entre los trabajadores agrícolas.
+                    UMA reduce el esfuerzo físico de los trabajadores
+                    lo que implica un deterioro mínimo en la salud del trabajador.
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="static/images/Impacto/salud.png" alt="Avatar" style="width:300px;height:300px;">
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>Salud y bienestar</h4>
+                      <div class="container">
+                                <p style="font-size: 10pt;"align="justify">
+                                           - Al menos 400 millones de personas no tienen acceso
+                                            a servicios de salud básicos, y el 40% carece de protección social.<br>
+                                     <br>  - 7 millones de personas mueren cada año a causa de la exposición
+                                            a finas partículas en el aire contaminado.</p>
+                            <a target="_blank" href="https://www.undp.org/content/undp/es/home/sustainable-development-goals/goal-3-good-health-and-well-being.html">
+                            <p style="color:blue" align="center">Ver Más</p></a>
+
+
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+<br><br><hr style="width:80%;text-align:center;"><br><br>
+
+        <div class="row">
+            <div class="col s12 m3">
+
+                 <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="static/images/Impacto/igualdad_genero.png" alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                           <h4>Igualdad de Género</h4>
+                            <div class="container">
+                                <p style="font-size: 10pt;"align="justify">
+                                           - A nivel mundial, las mujeres ganan solo 77
+                                            centavos por cada dólar que ganan los hombres haciendo el mismo trabajo.<br>
+                                     <br>  - Las mujeres representan solo el 13 por ciento de los propietarios de las tierras.</p>
+                            <a target="_blank" href="https://www.undp.org/content/undp/es/home/sustainable-development-goals/goal-5-gender-equality.html">
+                            <p style="color:blue" align="center">Ver Más</p></a>
+
+
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+
+            </div>
+            <div class="col s12 m9">
+                <div  class="container centerr">
+                    <p align="center" style="font-size: 20pt; color: #000">
+                    <strong>INCLUSIÓN</strong></p>
+                    <p style="font-size:18px">UMA hace el trabajo más inclusivo, ya que al reducir el esfuerzo físico,
+                        más personas pueden llevar a cabo las actividades realizadas
+                    en un invernadero.
+                    </p>
+                    <p style="font-size 10pt; color: blue">
+                   5.a Emprender reformas que otorguen a las mujeres el derecho a los recursos económicos
+                        en condiciones de igualdad , así como el acceso a la propiedad y al control de las
+                        tierras y otros bienes, los servicios financieros, la herencia y los recursos naturales,
+                        de conformidad con las leyes nacionales.</p>
+                </div>
+            </div>
+        </div>
+
+<br><br><hr style="width:80%;text-align:center;"><br><br>
+
+        <div class="row">
+            <div class="col s12 m9">
+                <div  class="container ">
+                    <p align="center" style="font-size: 20pt; color: #000">
+                        <strong>Trabajo digno</strong></p>
+                    <p style="font-size:18px" >
+                        El desempleo es también una de las principales causas
+                    de migración en zonas rurales. UMA reduce el esfuerzo
+                    físico de los trabajadores, hace el trabajo más inclusivo
+                    y ayuda a reactivar la economía de las comunidades haciendo
+                        el trabajo más eficiente para todos.</p>
+                    <p style="font-size 10pt; color: blue">
+
+                        8.2    Lograr niveles más elevados de productividad económica mediante la
+                        diversificación, la modernización tecnológica y la innovación, entre otras
+                        cosas centrando la atención en sectores de mayor valor añadido y uso intensivo
+                        de mano de obra.<br><br>
+                        8.8    Proteger los derechos laborales y promover un entorno de trabajo seguro
+                        y protegido para todos los trabajadores, incluidos los trabajadores migrantes,
+                        en particular las mujeres migrantes y las personas con empleos precarios.</p>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                        <div class="flip-card">
+                          <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                              <img src="static/images/Impacto/trabajo.png" alt="Avatar" style="width:300px;height:300px;">
+                            </div>
+                            <div class="flip-card-back">
+                              <h4>Trabajo decente </h4>
+                            <div class="container">
+                                <p style="font-size: 10pt;" align="justify">
+                                           - Se estima que 172 millones de personas en todo el mundo
+                                            estuvieron sin trabajo en 2018, una tasa de desempleo del 5 por ciento.<br>
+                                     <br>  - Muchas más mujeres que hombres están subutilizadas en la fuerza laboral:
+                                            85 millones en comparación con 55 millones de hombres.</p>
+                            <a target="_blank" href="https://www.undp.org/content/undp/es/home/sustainable-development-goals/goal-8-decent-work-and-economic-growth.html">
+                            <p style="color:blue" align="center">Ver Más</p></a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+<br><br><hr style="width:80%;text-align:center;">
+
+    <div class="container center">
+       <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/" target="_blank">
+              <img class="responsive-img center" src="static/images/Impacto/ods.png">
+       </a>
+     </div>
+
+</div>
+</main>
+
+
+<!--Footer-->
+ <footer class="page-footer green-grover">
+           <div class="container">
+            <div class="row">
+
+                <h6 class="white-text center">Contáctanos</h6>
+                <p class="grey-text text-lighten-4 center">groveragronics@gmail.com</p>
+
+            </div>
+          </div>
+     <div class="footer-copyright">
+         <div class="container">
+            © 2020 Smart Industries
+            <a class="grey-text text-lighten-4 right" href="#!">drone-x.com</a>
+            <a class="grey-text text-lighten-4 right" href="#!">sensum.com &nbsp</a>
+         </div>
+     </div>
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+         M.AutoInit();
+  });
+    </script>
+</body>
+</html>
